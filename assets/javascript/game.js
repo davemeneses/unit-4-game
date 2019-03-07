@@ -45,24 +45,23 @@ var startGame = function() {
 
   $("#playerCrystals").text(currentCrystals);
   $("#targetCrystals").text(targetCrystals);
-
-  // these were to check that this function actually worked and assigned random values in between the ranges I wanted.
-  // console.log("crystal one", crystals.crystalOne.value);
-  // console.log("crystal two", crystals.crystalTwo.value);
-  // console.log("crystal three", crystals.crystalThree.value);
-  // console.log("crystal four", crystals.crystalFour.value);
-  // console.log("Number you want!", targetCrystals);
 };
 
 var checkToWin = function() {
   //comparing numberToGet to finalScore
   if (currentCrystals > targetCrystals) {
-    alert("lost");
+    // alert("lost");
+    loseModal.style.display = "block";
+    loseModalImg.src = losingNap.src;
+    loseCaptionText.innerHTML = losingNap.alt;
     losses++;
     $("#losses").text(losses);
     startGame();
   } else if (currentCrystals === targetCrystals) {
-    alert("won");
+    // alert("won");
+    winModal.style.display = "block";
+    winModalImg.src = winningRico.src;
+    winCaptionText.innerHTML = winningRico.alt;
     wins++;
     $("#wins").text(wins);
     startGame();
@@ -94,3 +93,29 @@ $("#crystalThree").click(function() {
 $("#crystalFour").click(function() {
   addCrystals(crystals.crystalFour);
 });
+
+// modal test
+// Get the modal
+var winModal = document.getElementById("winModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var winImg = document.getElementById("winningRico");
+var winModalImg = document.getElementById("rico1");
+var winCaptionText = document.getElementById("caption");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  winModal.style.display = "none";
+  loseModal.style.display = "none";
+};
+
+// losing modal
+var loseModal = document.getElementById("loseModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var loseImg = document.getElementById("losingNap");
+var loseModalImg = document.getElementById("nap1");
+var loseCaptionText = document.getElementById("napCaption");
