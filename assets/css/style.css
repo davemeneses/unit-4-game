@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+/* for my CS I started out using bootstrap but decided I wanted to get more comfortable with flex boxes and decided to use those */
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: bold;
@@ -11,7 +11,6 @@ body {
 #background {
   background-image: url("./../images/napolean2.jpg");
   background-repeat: no-repeat, repeat;
-  /* height: 100%; */
   background-size: 100%;
   background-position: center;
   background-size: cover;
@@ -39,8 +38,6 @@ body {
 }
 
 .crystalInfo {
-  /* display: flex;
-  justify-content: center; */
   border: 3px solid black;
   width: 40%;
   padding: 3%;
@@ -80,15 +77,8 @@ body {
 /* font-family: 'Yellowtail', cursive;
 font-family: 'Ubuntu', sans-serif; */
 
-/* modal test */
+/* Win Modal CS */
 #winningRico {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  display: none;
-}
-
-#losingNap {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -97,20 +87,19 @@ font-family: 'Ubuntu', sans-serif; */
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Modal Content (Image) */
 .modal-content {
   margin: auto;
   display: block;
@@ -118,7 +107,6 @@ font-family: 'Ubuntu', sans-serif; */
   max-width: 700px;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
   margin: auto;
   display: block;
@@ -130,17 +118,16 @@ font-family: 'Ubuntu', sans-serif; */
   height: 150px;
 }
 
-/* Add Animation - Zoom in the Modal */
 .modal-content,
 #caption {
   animation-name: zoom;
   animation-duration: 0.6s;
 }
-/* .modal-content,
+.modal-content,
 #napCaption {
   animation-name: zoom;
   animation-duration: 0.6s;
-} */
+}
 
 @keyframes zoom {
   from {
@@ -164,6 +151,68 @@ font-family: 'Ubuntu', sans-serif; */
 
 .close:hover,
 .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Lose Modal, this was tough and for a lot of this I just copy/pasted the top part and added like the number 2 to differentiate between the two.*/
+#loserNap {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+}
+
+#loserNap:hover {
+  opacity: 0.7;
+}
+
+.lose-modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#loseCaption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.lose-modal-content,
+#loseCaption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.loseClose {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.loseClose:hover,
+.loseClose:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;

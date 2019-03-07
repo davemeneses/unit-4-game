@@ -25,7 +25,7 @@
       <div id="instructions">
         <p>
           Uncle Rico is trying to go back in time! Help him get there by
-          clicking the crystals to match the needed power level.
+          clicking the crystals to match the needed power level to get there.
         </p>
       </div>
 
@@ -68,7 +68,6 @@
         <div class="crystalInfo">
           <p>Wins</p>
           <div id="wins"></div>
-          <div id="playerCrystals"></div>
         </div>
         <div class="crystalInfo">
           <p>Losses</p>
@@ -77,42 +76,35 @@
       </div>
     </div>
 
-    <img
-      id="winningRico"
-      src="./assets/images/uncleRico.jpg"
-      alt="You did it! You helped Uncle Rico go back in time and throw the game winning touchdown!"
-      style="width:100%;max-width:300px"
-    />
-    <!-- The Modal -->
-    <div id="winModal" class="modal">
-      <!-- The Close Button -->
-      <span class="close">&times;</span>
-
-      <!-- Modal Content (The Image) -->
-      <img class="modal-content" id="rico1" />
-
-      <!-- Modal Caption (Image Text) -->
-      <div id="caption"></div>
+    <div id="modalDiv1">
+      <img
+        id="winningRico"
+        src="./assets/images/uncleRico.jpg"
+        alt="You did it! You helped Uncle Rico go back in time and throw the game winning touchdown!"
+        style="width:100%;max-width:300px"
+      />
+      <!-- This is where I made the pop-ups if you win or lose. I found modals on the w3 schools website and have this triggered to go off once you win or lose. -->
+      <div id="winModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="rico1" />
+        <div id="caption"></div>
+      </div>
     </div>
 
-    <img
-      id="losingNap"
-      src="./assets/images/napoleonLoses.jpg"
-      alt="It's a piece of crap it doesn't work!"
-      style="width:100%;max-width:300px"
-    />
-    <!-- The Modal -->
-    <div id="loseModal" class="modal">
-      <!-- The Close Button -->
-      <span class="close">&times;</span>
-
-      <!-- Modal Content (The Image) -->
-      <img class="modal-content" id="nap1" />
-
-      <!-- Modal Caption (Image Text) -->
-      <div id="caption"></div>
+    <div id="modalDiv2">
+      <img
+        id="loserNap"
+        src="./assets/images/napoleonLoses.jpg"
+        alt="It's a piece of crap, it doesn't work!"
+        style="width:100%;max-width:300px"
+      />
+      <!-- I know it's not the most dry but I straight up did this twice since it was only 2 pop ups. If there were more than 2 I would have found a way to generate this with a for loop but I was just really happy these worked. -->
+      <div id="loseModal" class="modal">
+        <span class="loseClose">&times;</span>
+        <img class="lose-modal-content" id="nap01" />
+        <div id="loseCaption"></div>
+      </div>
     </div>
-
     <script type="text/javascript" src="./assets/javascript/game.js"></script>
   </body>
 </html>
